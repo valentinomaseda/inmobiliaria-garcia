@@ -28,6 +28,11 @@ apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
+      const reqUrl = error.config?.url || '';
+      // No redirigir si la respuesta 401 viene de la ruta de login
+      if (reqUrl.includes('/auth/login')) {
+        return Promise.reject(error);
+      }
       localStorage.removeItem('token');
       localStorage.removeItem('admin');
       window.location.href = '/admin/login';

@@ -21,10 +21,12 @@ export default function AdminLogin() {
     try {
       await authService.login(email, password);
       alertSuccess('Inicio de sesión exitoso');
-      navigate('/admin/dashboard');
+      // Esperar un momento para que el usuario pueda leer el mensaje
+        navigate('/admin/dashboard');
     } catch (err) {
       setError(err.response?.data?.message || 'Error al iniciar sesión');
       alertError(err.response?.data?.message || 'Error al iniciar sesión');
+
     } finally {
       setLoading(false);
     }
@@ -53,11 +55,6 @@ export default function AdminLogin() {
         {/* Formulario */}
         <div className="bg-jo-darkSurface rounded-2xl shadow-premium-dark p-6 sm:p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
-            {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
-                {error}
-              </div>
-            )}
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-jo-darkText mb-2">
