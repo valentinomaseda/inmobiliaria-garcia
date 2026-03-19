@@ -11,7 +11,7 @@ export default function OfficeLocation() {
 
             <div className="bg-white rounded-2xl p-6 shadow">
               <h3 className="font-semibold text-lg text-jo-dark mb-2">Dirección</h3>
-              <p className="text-jo-textMuted">Av. Mitre 123, Arrecifes, Provincia de Buenos Aires</p>
+              <p className="text-jo-textMuted">Av. Roque Sáenz Peña 717, B2740 Arrecifes, Provincia de Buenos Aires</p>
 
               <div className="mt-4">
                 <h4 className="font-semibold text-sm text-jo-dark">Teléfono</h4>
@@ -29,12 +29,13 @@ export default function OfficeLocation() {
             <div className="rounded-2xl overflow-hidden shadow">
               <iframe
                 title="Mapa - Arrecifes"
-                src="https://www.google.com/maps?q=Arrecifes%2C%20Provincia%20de%20Buenos%20Aires&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13221.42793757138!2d-60.10691014999999!3d-34.060362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b99d616de03d87%3A0x89b139cc1e4fa91d!2sINMOBILIARIA%20GARCIA!5e0!3m2!1ses-419!2sar!4v1773880755004!5m2!1ses-419!2sar"
                 width="100%"
-                height="420"
-                className="border-0"
-                allowFullScreen=""
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </div>
