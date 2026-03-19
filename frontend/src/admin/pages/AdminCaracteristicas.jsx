@@ -1,0 +1,230 @@
+import React, { useState, useEffect } from 'react';
+import { FiPlus, FiEdit2, FiTrash2, FiTag } from 'react-icons/fi';
+import { caracteristicaService } from '../../services/caracteristicaService';
+import ConfirmModal from '../../components/ConfirmModal';
+import { useAlert } from '../../contexts/AlertContext';
+
+export default function AdminCaracteristicas() {
+  const [caracteristicas, setCaracteristicas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [editingId, setEditingId] = useState(null);
+  const [formData, setFormData] = useState({ nombre: '', descripcion: '' });
+  const [deleteModal, setDeleteModal] = useState({ isOpen: false, caracteristicaId: null, caracteristicaNombre: '' });
+  const { success, error: showError } = useAlert();
+
+  useEffect(() => {
+    loadCaracteristicas();
+  }, []);
+
+  const loadCaracteristicas = async () => {
+    try {
+      const response = await caracteristicaService.getAll();
+      setCaracteristicas(response.data || []);
+    } catch (error) {
+      console.error('Error al cargar características:', error);
+      showError('Error al cargar las características');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      if (editingId) {
+        await caracteristicaService.update(editingId, formData);
+        success('Característica actualizada correctamente');
+      } else {
+        await caracteristicaService.create(formData);
+        success('Característica creada correctamente');
+      }
+      
+      setShowModal(false);
+      setFormData({ nombre: '', descripcion: '' });
+      setEditingId(null);
+      loadCaracteristicas();
+    } catch (error) {
+      showError('Error al guardar la característica');
+      console.error(error);
+    }
+  };
+
+  const handleEdit = (caracteristica) => {
+    setEditingId(caracteristica.idCaracteristica);
+    setFormData({
+      nombre: caracteristica.nombre,
+      descripcion: caracteristica.descripcion || ''
+    });
+    setShowModal(true);
+  };
+
+  const openDeleteModal = (id, nombre) => {
+    setDeleteModal({ isOpen: true, caracteristicaId: id, caracteristicaNombre: nombre });
+  };
+
+  const closeDeleteModal = () => {
+    setDeleteModal({ isOpen: false, caracteristicaId: null, caracteristicaNombre: '' });
+  };
+
+  const handleDelete = async () => {
+    try {
+      await caracteristicaService.delete(deleteModal.caracteristicaId);
+      success(`Característica "${deleteModal.caracteristicaNombre}" eliminada correctamente`);
+      loadCaracteristicas();
+    } catch (error) {
+      showError('Error al eliminar la característica. Puede que esté vinculada a propiedades.');
+      console.error(error);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setFormData({ nombre: '', descripcion: '' });
+    setEditingId(null);
+  };
+
+  return (
+    <div>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6 sm:mb-8">
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-jo-darkText mb-2">
+            Características
+          </h2>
+          <p className="text-sm sm:text-base text-jo-darkTextMuted">
+            Gestiona las características que pueden tener las propiedades
+          </p>
+        </div>
+        <button
+          onClick={() => setShowModal(true)}
+          className="flex items-center justify-center gap-2 bg-jo-pink hover:bg-jo-pinkHover text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-colors font-medium text-sm sm:text-base whitespace-nowrap"
+        >
+          <FiPlus size={20} />
+          <span className="hidden xs:inline">Nueva Característica</span>
+          <span className="xs:hidden">Nueva</span>
+        </button>
+      </div>
+
+      {/* Lista de características */}
+      <div className="bg-jo-darkSurface rounded-xl shadow-premium-dark overflow-hidden border border-jo-darkBorder">
+        {loading ? (
+          <div className="flex items-center justify-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-jo-pink"></div>
+          </div>
+        ) : caracteristicas.length === 0 ? (
+          <div className="text-center py-12 text-jo-darkTextMuted">
+            <FiTag size={48} className="mx-auto mb-4 opacity-30" />
+            <p>No hay características registradas</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 p-4 sm:p-6">
+            {caracteristicas.map((caracteristica) => (
+              <div
+                key={caracteristica.idCaracteristica}
+                className="bg-jo-darkCard border border-jo-darkBorder rounded-lg p-3 sm:p-4 hover:shadow-md transition-shadow"
+              >
+                <div className="flex justify-between items-start gap-2 mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-jo-darkText mb-1 text-sm sm:text-base truncate">
+                      {caracteristica.nombre}
+                    </h3>
+                    {caracteristica.descripcion && (
+                      <p className="text-xs sm:text-sm text-jo-darkTextMuted line-clamp-2">
+                        {caracteristica.descripcion}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex gap-1 sm:gap-2 flex-shrink-0">
+                    <button
+                      onClick={() => handleEdit(caracteristica)}
+                      className="p-1.5 sm:p-2 text-blue-400 hover:bg-blue-900/20 rounded-lg transition-colors"
+                      title="Editar"
+                    >
+                      <FiEdit2 size={14} className="sm:w-4 sm:h-4" />
+                    </button>
+                    <button
+                      onClick={() => openDeleteModal(caracteristica.idCaracteristica, caracteristica.nombre)}
+                      className="p-1.5 sm:p-2 text-red-400 hover:bg-red-900/20 rounded-lg transition-colors"
+                      title="Eliminar"
+                    >
+                      <FiTrash2 size={14} className="sm:w-4 sm:h-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
+          <div className="bg-jo-darkSurface border border-jo-darkBorder rounded-xl shadow-premium-dark max-w-md w-full p-6">
+            <h3 className="text-xl font-display font-bold text-jo-darkText mb-4">
+              {editingId ? 'Editar Característica' : 'Nueva Característica'}
+            </h3>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-jo-darkText mb-2">
+                  Nombre *
+                </label>
+                <input
+                  type="text"
+                  value={formData.nombre}
+                  onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                  className="w-full px-4 py-2 bg-jo-darkCard border border-jo-darkBorder text-jo-darkText rounded-lg focus:ring-2 focus:ring-jo-pink focus:border-transparent outline-none placeholder:text-jo-darkTextMuted"
+                  placeholder="Ej: Piscina, Garage, Quincho"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-jo-darkText mb-2">
+                  Descripción
+                </label>
+                <textarea
+                  value={formData.descripcion}
+                  onChange={(e) => setFormData({ ...formData, descripcion: e.target.value })}
+                  rows="3"
+                  className="w-full px-4 py-2 bg-jo-darkCard border border-jo-darkBorder text-jo-darkText rounded-lg focus:ring-2 focus:ring-jo-pink focus:border-transparent outline-none resize-none placeholder:text-jo-darkTextMuted"
+                  placeholder="Descripción opcional..."
+                ></textarea>
+              </div>
+
+              <div className="flex justify-end gap-3 mt-6">
+                <button
+                  type="button"
+                  onClick={handleCloseModal}
+                  className="px-4 py-2 border border-jo-darkBorder text-jo-darkText rounded-lg hover:bg-jo-darkCard transition-colors"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-jo-pink hover:bg-jo-pinkHover text-white rounded-lg transition-colors"
+                >
+                  {editingId ? 'Actualizar' : 'Crear'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de confirmación de eliminación */}
+      <ConfirmModal
+        isOpen={deleteModal.isOpen}
+        onClose={closeDeleteModal}
+        onConfirm={handleDelete}
+        title="Eliminar característica"
+        message={`¿Estás seguro de que deseas eliminar la característica "${deleteModal.caracteristicaNombre}"? Si está vinculada a propiedades, no podrá ser eliminada.`}
+        confirmText="Eliminar"
+        cancelText="Cancelar"
+        type="danger"
+      />
+    </div>
+  );
+}

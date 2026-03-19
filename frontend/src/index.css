@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-white text-jo-dark font-sans antialiased selection:bg-jo-pink selection:text-jo-dark;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  /* Custom Scrollbar para Select personalizado - Tema Oscuro (Admin) */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #fbd100;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #e0b800;
+  }
+
+  /* Firefox */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #fbd100 #1f2937;
+  }
+
+  /* Custom Scrollbar para Select personalizado - Tema Claro (Cliente) */
+  .custom-scrollbar-light::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar-light::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar-light::-webkit-scrollbar-thumb {
+    background: #fbd100;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar-light::-webkit-scrollbar-thumb:hover {
+    background: #e0b800;
+  }
+
+  /* Firefox */
+  .custom-scrollbar-light {
+    scrollbar-width: thin;
+    scrollbar-color: #fbd100 #f3f4f6;
+  }
+}
