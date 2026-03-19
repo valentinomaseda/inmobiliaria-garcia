@@ -18,18 +18,18 @@ export default function Hero() {
       {/* Contenido */}
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 py-20 sm:py-28 md:py-32 pb-32 md:pb-40">
         <h1 
-          className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-tight md:leading-[1.1] break-words"
+          className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-tight md:leading-[1.1] break-words text-slateDark"
           data-aos="fade-down"
           data-aos-delay="100"
         >
-          <span className="text-textDark drop-shadow-sm">Tu próxima propiedad,</span>
+          <span className="text-slateDark drop-shadow-sm">Tu próxima propiedad,</span>
           <br className="hidden md:block"/> 
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-primary drop-shadow-lg">
              respaldada por expertos.
           </span>
         </h1>
         <p 
-          className="text-base xs:text-lg md:text-xl text-gray-700 max-w-xl sm:max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm px-2 sm:px-0"
+          className="text-base xs:text-lg md:text-xl text-slateDark max-w-xl sm:max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm px-2 sm:px-0"
           data-aos="fade-up"
           data-aos-delay="200"
         >

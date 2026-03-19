@@ -46,9 +46,9 @@ export default function AdminSidebar({ isOpen, onClose }) {
         <div className="p-6 border-b border-jo-darkBorder flex justify-between items-center">
           <Link to="/" className="block">
             <img 
-              src="/logo.jpg" 
+              src="/logo.png" 
               alt="Inmobiliaria García" 
-              className="h-14.5 w-auto"
+              className="h-[100px] w-auto"
             />
           </Link>
           <button

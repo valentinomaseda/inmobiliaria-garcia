@@ -22,7 +22,7 @@ export default function SearchBar() {
   return (
     <div className="relative -mt-6 z-20 max-w-[1400px] mx-auto px-4 sm:px-6">
       <div 
-        className="bg-white shadow-premium rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center gap-3"
+        className="bg-white/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 flex flex-col md:flex-row items-stretch md:items-center gap-3"
         data-aos="zoom-in"
         data-aos-delay="400"
       >
@@ -42,7 +42,7 @@ export default function SearchBar() {
         </div>
 
         {/* Divisor vertical (solo desktop) */}
-        <div className="hidden md:block w-px h-8 bg-gray-200"></div>
+        <div className="hidden md:block w-px h-8 bg-white/30"></div>
 
         {/* Select Ubicación */}
         <div className="flex-1 min-w-[140px]">
@@ -87,7 +87,7 @@ export default function SearchBar() {
         {/* Botón de búsqueda */}
         <button
           onClick={handleSearch}
-          className="px-6 py-3 bg-jo-pink hover:bg-jo-pinkHover text-jo-dark font-semibold rounded-lg transition-all flex items-center justify-center gap-2 shadow-lg shadow-jo-pink/25 group"
+          className="px-6 py-3 bg-primary text-white font-semibold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/40 hover:shadow-primary/60 hover:bg-primary/90"
         >
           <svg 
             className="w-5 h-5 group-hover:scale-110 transition-transform" 

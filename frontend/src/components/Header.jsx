@@ -48,16 +48,16 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-secondary backdrop-blur-md border-b border-jo-border/50 transition-all">
+    <header className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border border-white/20 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
         <Link to="/" onClick={handleInicioClick} className="flex items-center">
           <img 
-            src="/logo.jpg" 
+            src="/logo.png" 
             alt="Inmobiliaria García" 
             className="h-12 sm:h-16 w-auto object-contain transform transition-transform duration-300 hover:scale-110"
           />
         </Link>
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-black">
+        <nav className="hidden md:flex gap-8 text-sm font-medium text-slateDark">
           <Link to="/" onClick={handleInicioClick} className="hover:text-jo-dark transition-colors">Inicio</Link>
           <a href="#propiedades" onClick={handlePropiedadesClick} className="hover:text-jo-dark transition-colors">Propiedades</a>
           <a href="#contacto" onClick={handleContactoClick} className="hover:text-jo-dark transition-colors">Tasaciones</a>

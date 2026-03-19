@@ -16,7 +16,7 @@ export default function Footer() {
         {/* Logo centrado */}
         <div className="flex justify-center mb-8">
           <img
-            src="/logo.jpg"
+            src="/logo.png"
             alt="Inmobiliaria García"
             className="h-20 w-auto object-contain hover:opacity-80 transition-opacity"
           />

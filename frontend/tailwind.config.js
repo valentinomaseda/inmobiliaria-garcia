@@ -11,6 +11,8 @@ export default {
         primary: '#f6842e',
         secondary: '#ffffff',
         textDark: '#1f2937',
+        slateDark: '#0f172a',
+        slateLight: '#f8fafc',
         jo: {
           pink: '#f6842e',
           pinkHover: '#d36a1f',
