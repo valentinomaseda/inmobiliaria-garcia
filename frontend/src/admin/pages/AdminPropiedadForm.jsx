@@ -455,7 +455,7 @@ export default function AdminPropiedadForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-jo-darkText mb-2">
-                Dirección
+                Calle
               </label>
               <input
                 type="text"
@@ -463,7 +463,7 @@ export default function AdminPropiedadForm() {
                 value={formData.direccion}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-jo-darkCard border border-jo-darkBorder text-jo-darkText rounded-lg placeholder:text-jo-darkTextMuted focus:ring-2 focus:ring-jo-pink focus:border-transparent outline-none"
-                placeholder="Calle"
+                placeholder="Av. Merlassino"
               />
             </div>
 
@@ -519,7 +519,7 @@ export default function AdminPropiedadForm() {
                 value={formData.barrio}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-jo-darkCard border border-jo-darkBorder text-jo-darkText rounded-lg placeholder:text-jo-darkTextMuted focus:ring-2 focus:ring-jo-pink focus:border-transparent outline-none"
-                placeholder="Centro"
+                placeholder="Las Flores"
               />
             </div>
 
@@ -533,7 +533,7 @@ export default function AdminPropiedadForm() {
                 value={formData.ciudad}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-jo-darkCard border border-jo-darkBorder text-jo-darkText rounded-lg placeholder:text-jo-darkTextMuted focus:ring-2 focus:ring-jo-pink focus:border-transparent outline-none"
-                placeholder="Córdoba"
+                placeholder="Arrecifes"
               />
             </div>
 
@@ -547,7 +547,7 @@ export default function AdminPropiedadForm() {
                 value={formData.provincia}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-jo-darkCard border border-jo-darkBorder text-jo-darkText rounded-lg placeholder:text-jo-darkTextMuted focus:ring-2 focus:ring-jo-pink focus:border-transparent outline-none"
-               placeholder="Córdoba"
+               placeholder="Buenos Aires"
               />
             </div>
 
@@ -561,7 +561,7 @@ export default function AdminPropiedadForm() {
                 value={formData.codigo_postal}
                 onChange={handleChange}
                 className="w-full px-4 py-2 bg-jo-darkCard border border-jo-darkBorder text-jo-darkText rounded-lg placeholder:text-jo-darkTextMuted focus:ring-2 focus:ring-jo-pink focus:border-transparent outline-none"
-                placeholder="5000"
+                placeholder="2740"
               />
             </div>
 
@@ -643,7 +643,7 @@ export default function AdminPropiedadForm() {
           {/* Imágenes existentes (solo en modo edición) */}
           {isEdit && imagenes.length > 0 && (
             <div className="mb-6">
-              <h4 className="text-sm font-medium text-jo-dark mb-3">Imágenes actuales</h4>
+              <h4 className="text-sm font-medium text-jo-darkText mb-3">Imágenes actuales</h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {imagenes.map((imagen) => (
                   <div key={imagen.idImagen} className="relative group">
@@ -651,7 +651,7 @@ export default function AdminPropiedadForm() {
                       src={imagenService.getImageUrl(imagen.url)}
                       alt="Propiedad"
                       className="w-full h-32 object-cover rounded-lg"
-                    />
+                    />00
                     {imagen.es_principal && (
                       <div className="absolute top-2 left-2 bg-jo-pink text-white text-xs px-2 py-1 rounded">
                         Principal
@@ -673,7 +673,7 @@ export default function AdminPropiedadForm() {
           {/* Preview de imágenes seleccionadas */}
           {selectedFiles.length > 0 && (
             <div className="mb-6">
-              <h4 className="text-sm font-medium text-jo-dark mb-3">
+              <h4 className="text-sm font-medium text-jo-darkText mb-3">
                 Nuevas imágenes ({selectedFiles.length})
               </h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

@@ -49,7 +49,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white/60 backdrop-blur-md border-b border-white/10 shadow-sm">
+    <header style={{ fontFamily: 'Montserrat, sans-serif'}} className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/10 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -57,7 +57,7 @@ export default function Header() {
               <img
                 src="/logo.png"
                 alt="Inmobiliaria García"
-                className="h-13 sm:h-[70px] w-auto object-contain "
+                className="h-14 sm:h-16 w-auto object-contain"
               />
             
             <div className="hidden md:flex flex-col">

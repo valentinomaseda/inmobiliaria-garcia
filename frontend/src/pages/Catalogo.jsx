@@ -101,14 +101,14 @@ export default function Catalogo() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white pt-28 pb-20 flex items-center justify-center">
+      <div className="min-h-full bg-white pt-8 pb-20 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-jo-pink"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white pt-28 pb-20">
+    <div className="min-h-full bg-white pt-8 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header de Catálogo */}
         <div className="mb-12" data-aos="fade-down">

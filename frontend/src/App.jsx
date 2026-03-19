@@ -10,6 +10,7 @@ import PropiedadDetalle from './pages/PropiedadDetalle';
 // Admin
 import AdminLogin from './admin/pages/AdminLogin';
 import AdminLayout from './admin/pages/AdminLayout';
+import ProtectedRoute from './admin/components/ProtectedRoute';
 import AdminDashboard from './admin/pages/AdminDashboard';
 import AdminPropiedades from './admin/pages/AdminPropiedades';
 import AdminPropiedadForm from './admin/pages/AdminPropiedadForm';
@@ -22,21 +23,21 @@ export default function App() {
       <Routes>
         {/* Rutas públicas */}
         <Route path="/" element={
-          <div className="min-h-screen flex flex-col bg-jo-surface selection:bg-jo-pink selection:text-white overflow-x-hidden">
+          <div className="min-h-[calc(100vh-5rem)] pt-20 flex flex-col bg-jo-surface selection:bg-jo-pink selection:text-white overflow-x-hidden">
             <Header />
             <Home />
             <Footer />
           </div>
         } />
         <Route path="/catalogo" element={
-          <div className="min-h-screen flex flex-col bg-jo-surface selection:bg-jo-pink selection:text-white overflow-x-hidden">
+          <div className="min-h-[calc(100vh-5rem)] pt-20 flex flex-col bg-jo-surface selection:bg-jo-pink selection:text-white overflow-x-hidden">
             <Header />
             <Catalogo />
             <Footer />
           </div>
         } />
         <Route path="/propiedad/:id" element={
-          <div className="min-h-screen flex flex-col bg-jo-surface selection:bg-jo-pink selection:text-white overflow-x-hidden">
+          <div className="min-h-[calc(100vh-5rem)] pt-20 flex flex-col bg-jo-surface selection:bg-jo-pink selection:text-white overflow-x-hidden">
             <Header />
             <PropiedadDetalle />
             <Footer />
@@ -45,7 +46,7 @@ export default function App() {
 
         {/* Rutas de administración */}
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminLayout />}>
+        <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="propiedades" element={<AdminPropiedades />} />
           <Route path="propiedades/nueva" element={<AdminPropiedadForm />} />

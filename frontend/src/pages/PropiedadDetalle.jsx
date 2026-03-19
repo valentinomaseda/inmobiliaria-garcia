@@ -80,7 +80,7 @@ export default function PropiedadDetalle() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slateLight/30 pt-28 pb-20 flex items-center justify-center">
+      <div className="min-h-full bg-slateLight/30 pt-8 pb-20 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
       </div>
     );
@@ -89,7 +89,7 @@ export default function PropiedadDetalle() {
   if (!propiedad) return null;
 
   return (
-    <div className="min-h-screen bg-slateLight/10 pt-24 pb-20">
+    <div className="min-h-full bg-slateLight/10 pt-8 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">

@@ -27,7 +27,7 @@ export default function PropertyCard({ propiedad }) {
         <div className="absolute top-4 left-4 z-20 flex flex-col items-start gap-2">
           <span className="bg-white/95 backdrop-blur-md px-3 py-1 rounded-md text-xs font-bold tracking-widest text-slateDark shadow-sm uppercase">
             {propiedad.tipo}
-          </span>
+          </span>   
           {propiedad.destacada && (
             <span className="bg-primary px-3 py-1 rounded-md text-xs font-bold tracking-widest text-white shadow-lg shadow-primary/40 uppercase">
               Destacada
