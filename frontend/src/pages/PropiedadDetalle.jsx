@@ -81,7 +81,7 @@ export default function PropiedadDetalle() {
   if (loading) {
     return (
       <div className="min-h-full bg-slateLight/30 pt-8 pb-20 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-300"></div>
       </div>
     );
   }
@@ -144,12 +144,12 @@ export default function PropiedadDetalle() {
               {imagenes.length > 1 && (
                 <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent">
                   {imagenes.map((img, index) => (
-                    <button
+                    <button 
                       key={index}
                       onClick={() => setImagenActual(index)}
                       className={`relative shrink-0 w-20 h-20 rounded-xl overflow-hidden transition-all duration-300 ${
                         imagenActual === index 
-                          ? 'ring-2 ring-primary opacity-100 shadow-md scale-95' 
+                          ? 'ring-2 ring-slate-200 opacity-100 shadow-md scale-95' 
                           : 'opacity-60 hover:opacity-100 hover:scale-100'
                       }`}
                     >
@@ -166,9 +166,9 @@ export default function PropiedadDetalle() {
             
             {/* Breadcrumb & Categoría */}
             <div className="flex items-center gap-2 text-sm text-slate-500">
-              <button onClick={() => navigate(-1)} className="hover:text-primary transition-colors font-medium">Volver</button>
+              <button onClick={() => navigate(-1)} className="hover:text-slate-900 transition-colors font-medium">Volver</button>
               <span>/</span>
-              <span className="font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md uppercase tracking-wider text-xs">{propiedad.tipo}</span>
+              <span className="font-bold text-slate-900 bg-slate-50 px-2 py-0.5 rounded-md uppercase tracking-wider text-xs">{propiedad.tipo}</span>
             </div>
 
             {/* Encabezado y Precio */}
@@ -260,11 +260,11 @@ export default function PropiedadDetalle() {
           
           {imagenes.length > 1 && (
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6 bg-black/50 px-6 py-3 rounded-full backdrop-blur-md" onClick={(e) => e.stopPropagation()}>
-              <button onClick={() => setImagenActual((prev) => (prev - 1 + imagenes.length) % imagenes.length)} className="text-white hover:text-primary">
+              <button onClick={() => setImagenActual((prev) => (prev - 1 + imagenes.length) % imagenes.length)} className="text-white hover:text-slate-300">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
               </button>
               <span className="text-white font-medium">{imagenActual + 1} / {imagenes.length}</span>
-              <button onClick={() => setImagenActual((prev) => (prev + 1) % imagenes.length)} className="text-white hover:text-primary">
+              <button onClick={() => setImagenActual((prev) => (prev + 1) % imagenes.length)} className="text-white hover:text-slate-300">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
               </button>
             </div>
