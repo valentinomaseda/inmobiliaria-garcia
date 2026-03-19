@@ -9,17 +9,17 @@ async function testConnection() {
     console.log('✅ Conexión exitosa a MySQL\n');
 
     // Verificar si la base de datos existe
-    const [databases] = await connection.query('SHOW DATABASES LIKE "inmobiliaria_juliana"');
+    const [databases] = await connection.query('SHOW DATABASES LIKE "garcia"');
     
     if (databases.length === 0) {
-      console.error('❌ La base de datos "inmobiliaria_juliana" no existe');
+      console.error('❌ La base de datos "inmobiliaria_garcia" no existe');
       console.log('\n📝 Ejecuta el schema.sql primero:');
       console.log('   mysql -u root -p < schema.sql\n');
       connection.release();
       process.exit(1);
     }
     
-    console.log('✅ Base de datos "inmobiliaria_juliana" encontrada\n');
+    console.log('✅ Base de datos "inmobiliaria_garcia" encontrada\n');
 
     // Verificar si la tabla administrador existe
     const [tables] = await connection.query('SHOW TABLES LIKE "administrador"');

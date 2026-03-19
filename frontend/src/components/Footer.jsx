@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="flex justify-center mb-8">
           <img
             src="/logo.jpg"
-            alt="Inmobiliaria Bernardes"
+            alt="Inmobiliaria García"
             className="h-20 w-auto object-contain hover:opacity-80 transition-opacity"
           />
         </div>
@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
           {/* Email */}
           <a
-            href="mailto:info@inmobiliariabernardes.com"
+            href="mailto:info@inmobiliariagarcia.com"
             className="flex flex-col items-center gap-3 p-6 bg-white/5 hover:bg-white/10 rounded-2xl transition-all group"
           >
             <div className="w-14 h-14 bg-jo-pink/20 rounded-full flex items-center justify-center group-hover:bg-jo-pink/30 transition-colors">
@@ -46,14 +46,14 @@ export default function Footer() {
             <div className="text-center">
               <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Email</p>
               <p className="text-white font-medium group-hover:text-jo-pink transition-colors">
-                info@inmobiliariabernardes.com
+                info@inmobiliariagarcia.com
               </p>
             </div>
           </a>
 
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/inmobiliaria.bernardes/"
+            href="https://www.instagram.com/inmobiliaria.garcia/"
             target="_blank"
             rel="noreferrer"
             className="flex flex-col items-center gap-3 p-6 bg-white/5 hover:bg-white/10 rounded-2xl transition-all group"
@@ -64,14 +64,14 @@ export default function Footer() {
             <div className="text-center">
               <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Instagram</p>
               <p className="text-white font-medium group-hover:text-jo-pink transition-colors">
-                @inmobiliaria.bernardes
+                @inmobiliaria.garcia
               </p>
             </div>
           </a>
 
           {/* Facebook */}
           <a
-            href="https://www.facebook.com/InmobiliariaBernardes"
+            href="https://www.facebook.com/InmobiliariaGarcia"
             target="_blank"
             rel="noreferrer"
             className="flex flex-col items-center gap-3 p-6 bg-white/5 hover:bg-white/10 rounded-2xl transition-all group"
@@ -82,7 +82,7 @@ export default function Footer() {
             <div className="text-center">
               <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Facebook</p>
               <p className="text-white font-medium group-hover:text-jo-pink transition-colors">
-                Inmobiliaria Bernardes
+                Inmobiliaria García
               </p>
             </div>
           </a>
@@ -91,7 +91,7 @@ export default function Footer() {
         {/* Copyright y línea divisoria */}
         <div className="pt-8 border-t border-white/10">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Inmobiliaria Bernardes. Todos los derechos reservados.
+            © {new Date().getFullYear()} Inmobiliaria García. Todos los derechos reservados.
           </p>
         </div>
       </div>

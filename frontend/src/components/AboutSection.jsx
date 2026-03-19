@@ -2,109 +2,51 @@ import React from 'react';
 
 export default function AboutSection() {
   const features = [
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
-      text: 'Asesoramiento legal y técnico'
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      text: 'Tasaciones reales de mercado'
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
-      text: 'Acompañamiento en todo el proceso'
-    }
+    { icon: '✓', text: 'Asesoramiento legal y técnico' },
+    { icon: '✓', text: 'Tasaciones reales de mercado' },
+    { icon: '✓', text: 'Acompañamiento en todo el proceso' }
   ];
 
   return (
     <section className="bg-jo-surface py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Columna Izquierda - Imagen */}
-          <div 
-            className="relative"
-            data-aos="fade-right"
-            data-aos-duration="800"
-          >
-            <div className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0">
-              {/* Placeholder de foto profesional */}
-              <div className="absolute inset-0 bg-gradient-to-br from-jo-pink/20 to-orange-500/20 rounded-3xl"></div>
-              <img 
-                src="/foto-about.jpg  "
-                alt="Inmobiliaria Bernardes - Equipo Inmobiliario"
-                className="relative w-full h-full object-cover rounded-3xl shadow-premium"
-              />
-              
-              {/* Badge decorativo */}
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-premium p-6">
-                <div className="text-center">
-                  <p className="text-4xl font-display font-bold text-jo-pink">+10</p>
-                  <p className="text-sm font-medium text-jo-textMuted mt-1">Años de<br/>experiencia</p>
+          {/* Left: Content */}
+          <div data-aos="fade-up">
+            <div className="inline-block mb-4">
+              <span className="text-xs font-bold text-jo-pink uppercase tracking-wider bg-jo-pink/10 px-4 py-2 rounded-full">Trayectoria y Confianza</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-jo-dark leading-tight mb-4">Conocemos Arrecifes porque somos de acá.</h2>
+
+            <div className="space-y-4 text-lg text-gray-700 leading-relaxed mb-6">
+              <p>
+                Si estás buscando comprar, vender o alquilar, sabés que no es solo una transacción: <strong className="text-jo-dark">es tu proyecto de vida.</strong>
+              </p>
+              <p>
+                En <strong className="text-jo-dark font-display">Inmobiliaria García</strong> ofrecemos un servicio profesional, transparente y comprometido con cada cliente.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              {features.map((f, i) => (
+                <div key={i} className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-shrink-0 w-12 h-12 bg-jo-pink/10 rounded-full flex items-center justify-center text-jo-pink">{f.icon}</div>
+                  <p className="font-medium text-jo-dark">{f.text}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Columna Derecha - Contenido */}
-          <div 
-            className="space-y-6"
-            data-aos="fade-left"
-            data-aos-duration="800"
-            data-aos-delay="100"
-          >
-            {/* Etiqueta */}
-            <div className="inline-block">
-              <span className="text-xs font-bold text-jo-pink uppercase tracking-wider bg-jo-pink/10 px-4 py-2 rounded-full">
-                Trayectoria y Confianza
-              </span>
-            </div>
-
-            {/* Título */}
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-jo-dark leading-tight">
-              Conocemos Arrecifes porque somos de acá.
-            </h2>
-
-            {/* Descripción */}
-            <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-              <p>
-                Si estás buscando comprar, vender o alquilar, sabés que no es solo una transacción: 
-                <strong className="text-jo-dark"> es tu proyecto de vida, tu patrimonio, tu inversión.</strong>
-              </p>
-              <p>
-                En <strong className="text-jo-dark font-display">Inmobiliaria Bernardes</strong> ofrecemos un servicio profesional, 
-                transparente y comprometido con cada cliente. Nos enfocamos en soluciones prácticas y seguras para la compra,
-                venta y alquiler de propiedades en Arrecifes.
-              </p>
-              <p className="text-base text-jo-textMuted italic">
-                Seriedad, atención personalizada y conocimiento del mercado local son el eje de nuestro trabajo.
-              </p>
-            </div>
-
-            {/* Features con checkmarks */}
-            <div className="grid grid-cols-1 gap-4 pt-4">
-              {features.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-jo-pink/10 rounded-full flex items-center justify-center text-jo-pink">
-                    {feature.icon}
-                  </div>
-                  <p className="font-medium text-jo-dark">{feature.text}</p>
-                </div>
-              ))}
+          {/* Right: Image */}
+          <div className="relative" data-aos="fade-left">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-orange-100 rounded-2xl"></div>
+            <img src="/foto-about.jpg" alt="Inmobiliaria García - Equipo" className="relative w-full h-[420px] object-cover rounded-2xl shadow-premium" />
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-premium p-6">
+              <div className="text-center">
+                <p className="text-4xl font-display font-bold text-primary">+10</p>
+                <p className="text-sm font-medium text-jo-textMuted mt-1">Años de<br/>experiencia</p>
+              </div>
             </div>
           </div>
         </div>

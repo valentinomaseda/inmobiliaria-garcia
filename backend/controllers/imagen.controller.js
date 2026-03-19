@@ -195,7 +195,7 @@ export const remove = async (req, res, next) => {
       // Extraer public_id de la URL de Cloudinary
       const urlParts = imagen.url.split('/');
       const fileName = urlParts[urlParts.length - 1];
-      const publicId = `inmobiliaria-juliana/propiedades/${fileName.split('.')[0]}`;
+      const publicId = `inmobiliaria-garcia/propiedades/${fileName.split('.')[0]}`;
       
       await cloudinary.uploader.destroy(publicId);
     } catch (err) {

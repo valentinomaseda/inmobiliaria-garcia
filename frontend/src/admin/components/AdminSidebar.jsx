@@ -47,7 +47,7 @@ export default function AdminSidebar({ isOpen, onClose }) {
           <Link to="/" className="block">
             <img 
               src="/logo.jpg" 
-              alt="Inmobiliaria Bernardes" 
+              alt="Inmobiliaria García" 
               className="h-14.5 w-auto"
             />
           </Link>

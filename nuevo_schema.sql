@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `inmobiliaria_juliana` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `inmobiliaria_juliana`;
+CREATE DATABASE  IF NOT EXISTS `inmobiliaria_garcia` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `inmobiliaria_garcia`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
--- Host: localhost    Database: inmobiliaria_juliana
+-- Host: localhost    Database: inmobiliaria_garcia
 -- ------------------------------------------------------
 -- Server version	8.0.43
 
@@ -42,7 +42,7 @@ CREATE TABLE `administrador` (
 
 LOCK TABLES `administrador` WRITE;
 /*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
-INSERT INTO `administrador` VALUES (1,'Juliana','juliana@gmail.com','$2a$10$ba7vCEGnxZ/ZuTcTe/k.iu26ZlVdGtqc/hriEU120QlcoL0wOFjtq','2026-03-11 05:23:18','2026-03-11 05:23:18');
+INSERT INTO `administrador` VALUES (1,'David','david@gmail.com','$2a$10$ba7vCEGnxZ/ZuTcTe/k.iu26ZlVdGtqc/hriEU120QlcoL0wOFjtq','2026-03-18 05:23:18','2026-03-11 05:23:18');
 /*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,16 +138,6 @@ CREATE TABLE `propiedad` (
   KEY `idx_destacada` (`destacada`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `propiedad`
---
-
-LOCK TABLES `propiedad` WRITE;
-/*!40000 ALTER TABLE `propiedad` DISABLE KEYS */;
-INSERT INTO `propiedad` VALUES (5,'Departamento luminoso en torre',85000.00,'USD','Departamento de 2 dormitorios en torre con amenities. Vista panorámica, muy luminoso y en excelente estado.',3,65.00,'venta','departamento','Bv. Illia','567','8','B','Nueva Córdoba','Córdoba','Córdoba',NULL,NULL,NULL,'disponible',1,'2026-03-12 17:13:35','2026-03-12 17:13:35'),(6,'Casa quinta con arboleda',180000.00,'USD','Quinta con casa principal de 4 ambientes, galpón, piscina y 2000m2 de terreno con árboles frutales.',4,150.00,'venta','quinta','Camino Real','890',NULL,NULL,'Zona Rural','Unquillo','Córdoba',NULL,NULL,NULL,'disponible',1,'2026-03-12 17:13:35','2026-03-12 17:13:35'),(7,'Departamento en alquiler - Centro',150000.00,'ARS','Monoambiente en pleno centro, ideal para estudiantes o profesionales. Cocina equipada, baño completo.',1,35.00,'alquiler','departamento','27 de Abril','234','3','A','Centro','Córdoba','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:13:35','2026-03-12 17:13:35'),(8,'Local comercial sobre avenida',120000.00,'USD','Local comercial a la calle con vidriera, baño y depósito. Zona de alto tránsito vehicular.',2,80.00,'venta','local','Av. Colón','3456',NULL,NULL,'Alberdi','Córdoba','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:13:35','2026-03-12 17:13:35'),(9,'Casa con jardín - 3 dormitorios',95000.00,'USD','Casa de 3 dormitorios con living-comedor, cocina, baño completo y amplio patio con parrilla.',5,120.00,'venta','casa','Belgrano','678',NULL,NULL,'General Paz','Córdoba','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:13:35','2026-03-12 17:13:35'),(10,'Terreno en country',45000.00,'USD','Lote de 600m2 en country con todos los servicios. Vista a las sierras.',0,600.00,'venta','terreno',NULL,NULL,NULL,NULL,'Country Los Álamos','La Calera','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:13:35','2026-03-12 17:13:35'),(11,'Oficina en edificio corporativo',200000.00,'ARS','Oficina de 50m2 en edificio corporativo con seguridad 24hs. Incluye cochera.',2,50.00,'alquiler','oficina','Cañada','890','5',NULL,'Centro','Córdoba','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:13:35','2026-03-12 17:13:35'),(12,'Dúplex con cochera',135000.00,'USD','Dúplex moderno de 3 dormitorios en planta alta, living-comedor y cochera cubierta.',4,110.00,'venta','casa','Fray Luis Beltrán','1122',NULL,NULL,'Cerro de las Rosas','Córdoba','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:13:35','2026-03-12 17:13:35'),(13,'Casa temporal en Carlos Paz',8000.00,'USD','Casa para alquiler turístico con 3 dormitorios, piscina y parrilla. A 5 cuadras del lago.',5,140.00,'alquiler_temporal','casa','San Lorenzo','456',NULL,NULL,'Costa Azul','Villa Carlos Paz','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:13:35','2026-03-12 17:13:35'),(14,'Penthouse con vista al río',320000.00,'USD','Espectacular penthouse de lujo con terraza privada de 80m2, vista panorámica al río. 3 dormitorios en suite, cocina diseñada, amenities premium.',5,220.00,'venta','departamento','Costanera','2500','15','PH','Cerro de las Rosas','Arrecifes','Buenos Aires','2740',NULL,NULL,'disponible',1,'2026-03-12 17:25:45','2026-03-12 17:39:03'),(15,'Casa campestre con caballerizas',275000.00,'USD','Propiedad rural con casa principal de 200m2, galpón, caballerizas para 6 caballos, palenque y 5 hectáreas de terreno.',6,200.00,'venta','quinta','Ruta E-55','Km 12',NULL,NULL,'Zona Rural','Malagueño','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:25:45','2026-03-12 17:25:45'),(16,'Departamento amoblado - Alquiler',180000.00,'ARS','Departamento 2 dormitorios totalmente amoblado y equipado. Incluye cochera, expensas bajas. Disponible inmediato.',3,55.00,'alquiler','departamento','Duarte Quirós','1500','6','D','Nueva Córdoba','Córdoba','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:25:45','2026-03-12 17:25:45'),(17,'Galpón industrial con oficinas',280000.00,'USD','Galpón de 600m2 con oficinas administrativas, baños, vestuarios. Portón alto, patio de maniobras. Ideal logística.',3,600.00,'venta','galpon','Circunvalación','5800',NULL,NULL,'Ferreyra','Córdoba','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:25:45','2026-03-12 17:25:45'),(18,'Casa de montaña - Valle de Punilla',12000.00,'USD','Casa amplia de 4 dormitorios con hogar a leña, galería cerrada y jardín. Ideal para vacaciones en familia. Excelente ubicación.',6,160.00,'alquiler_temporal','casa','Los Algarrobos','345',NULL,NULL,'Villa del Lago','Villa del Dique','Córdoba',NULL,NULL,NULL,'disponible',0,'2026-03-12 17:25:45','2026-03-12 17:25:45');
-/*!40000 ALTER TABLE `propiedad` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `propiedad_caracteristica`

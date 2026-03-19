@@ -16,7 +16,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'inmobiliaria-juliana/propiedades',
+    folder: 'inmobiliaria-garcia/propiedades',
     allowed_formats: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
     transformation: [
       { width: 2000, height: 1500, crop: 'limit' }, // Limitar tamaño máximo

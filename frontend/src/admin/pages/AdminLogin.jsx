@@ -38,7 +38,7 @@ export default function AdminLogin() {
           <div className="flex justify-center mb-4 sm:mb-6">
             <img 
               src="/logo.jpg" 
-              alt="Inmobiliaria Bernardes" 
+              alt="Inmobiliaria García" 
               className="h-16 sm:h-20 w-auto"
             />
           </div>

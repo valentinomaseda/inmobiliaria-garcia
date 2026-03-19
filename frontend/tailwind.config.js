@@ -8,11 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#fbd100',
-        secondary: '#313234',
+        primary: '#f6842e',
+        secondary: '#ffffff',
+        textDark: '#1f2937',
         jo: {
-          pink: '#fbd100',
-          pinkHover: '#e0b800',
+          pink: '#f6842e',
+          pinkHover: '#d36a1f',
           dark: '#313234',
           surface: '#f8fafc',
           border: '#e2e8f0',

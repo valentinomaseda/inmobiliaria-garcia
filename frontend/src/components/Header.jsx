@@ -48,13 +48,13 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-primary backdrop-blur-md border-b border-jo-border/50 transition-all">
+    <header className="fixed w-full top-0 z-50 bg-secondary backdrop-blur-md border-b border-jo-border/50 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
         <Link to="/" onClick={handleInicioClick} className="flex items-center">
           <img 
             src="/logo.jpg" 
-            alt="Inmobiliaria Bernardes" 
-            className="h-12 sm:h-16 w-auto object-contain hover:opacity-80 transition-opacity"
+            alt="Inmobiliaria García" 
+            className="h-12 sm:h-16 w-auto object-contain transform transition-transform duration-300 hover:scale-110"
           />
         </Link>
         <nav className="hidden md:flex gap-8 text-sm font-medium text-black">
@@ -65,7 +65,7 @@ export default function Header() {
         <a 
           href="#contacto" 
           onClick={handleContactoClick}
-          className="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-jo-dark rounded-full hover:bg-jo-dark/90 transition-all"
+          className="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-all"
         >
           Contactar
         </a>

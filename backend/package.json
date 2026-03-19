@@ -1,8 +1,8 @@
 {
-  "name": "inmobiliaria-juliana-backend",
+  "name": "inmobiliaria-garcia-backend",
   "version": "1.0.0",
   "type": "module",
-  "description": "Backend para Inmobiliaria Juliana Ortiz",
+  "description": "Backend para Inmobiliaria garcia",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
