@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function PropertyCard({ propiedad }) {
   return (
     <article 
-      className="group relative bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col"
+      className="group relative bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
       data-aos="fade-up"
       data-aos-duration="600"
     >
@@ -17,7 +17,7 @@ export default function PropertyCard({ propiedad }) {
         <img 
           src={propiedad.imagen || (propiedad.imagenes && propiedad.imagenes[0]) || '/placeholder.jpg'} 
           alt={`Imagen de ${propiedad.titulo}`}
-          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
         
